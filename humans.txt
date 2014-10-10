@@ -1,0 +1,12 @@
+/* MAIN */
+  Develop & Main Design: Aitor Aznar Álvarez
+  LinkedIn: http://www.linkedin.com/in/aitoraznar
+  Github: https://github.com/ReNDeZOwnler
+  Twitter: @RenAitor
+  Site: http://www.aitoraznar.com
+
+/* SITE */
+  Name: Radiadores Aznar
+  Last update: 28/02/2014
+  Doctype: HTML5
+  Libraries: JQuery, Bootstrap 3

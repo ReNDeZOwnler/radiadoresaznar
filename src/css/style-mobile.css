@@ -94,3 +94,33 @@
 			{
 				margin-top: 0;
 			}
+/*********************************************************************************/
+/* Custom		                                                                 */
+/*********************************************************************************/
+.item
+{
+	
+}
+	.item span.image,
+	.item header,
+	.item section {
+		width: 100%;
+		float: none;
+	}
+#menuContactInfo {
+	float:left;
+	margin-top: 0.5em;
+}
+#menuContactInfo a {
+	float: left;
+	text-align: left;
+}
+#menuContactInfo a i {
+	font-size: 1.5em;
+	margin-right: 0.5em;
+}
+#menuContactInfo a span {
+	font-size: 0.8em;
+	color: rgba(255,255,255,0.5);
+	line-height: 1.5em;
+}

@@ -199,8 +199,7 @@
 		
 			.image img
 			{
-				display: block;
-				width: 100%;
+				
 			}
 			
 			.image.avatar48
@@ -485,12 +484,12 @@
 		.item
 		{
 			box-shadow: 0 0.05em 0.15em 0 rgba(0,0,0,0.05);
-			margin-bottom: 40px;
+			margin-bottom: 20px;
+			background: #fff;
 		}
 		
 			.item header, .item section
 			{
-				background: #fff;
 				margin: 0;
 				padding: 1em 0 1em 0;
 				font-size: 1em;
@@ -800,35 +799,16 @@
 			{
 				background-color: #e8edec;
 			}
-
 /*********************************************************************************/
 /* Custom		                                                                 */
 /*********************************************************************************/
 #h2_title {
-	font-size: 1.75em;
+	font-size: 3em;
 	font-weight: bold;
 	color: #FFEA00;
 }
-#menuContactInfo {
-	float:left;
-	margin-top: 0.5em;
-}
-#menuContactInfo a {
-	float: left;
-	text-align: left;
-}
-#menuContactInfo a i {
-	font-size: 1.5em;
-	margin-right: 0.5em;
-}
-#menuContactInfo a span {
-	font-size: 0.8em;
-	color: rgba(255,255,255,0.5);
-	line-height: 1.5em;
-}
-
 #googleMap {
 	width: 100%;
-	max-width: 600px;
-	max-height: 450px;
+	height: 20em;
+	
 }

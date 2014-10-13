@@ -177,3 +177,40 @@
 				height: 2.25em;
 				line-height: 2.25em;
 			}
+/*********************************************************************************/
+/* Custom		                                                                 */
+/*********************************************************************************/
+.item
+{
+	width: 100%;
+	display: inline-table;
+	background: #FFF;
+}
+	.item span.image
+	{
+		width: 50%;
+		overflow: hidden;
+		float: left;
+	}
+	.item span img {
+		left: -50%;
+	    line-height: 100%;
+	    position: relative;
+	    vertical-align: middle;
+	    width: 200%;
+	}
+
+	.item header
+	{
+		width: 50%;
+		float: right;
+	}
+
+		.item header h3
+		{
+			font-size: 1.25em;
+		}
+	.item section {
+		width: 50%;
+		float: right;
+	}

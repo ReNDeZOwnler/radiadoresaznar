@@ -1,0 +1,15 @@
+# humanstxt.org/
+
+/* MAIN */
+  Develop: Aitor Aznar Álvarez
+  Main Design: HTML5 Boilerplate & Aitor Aznar Álvarez
+  LinkedIn: http://www.linkedin.com/in/aitoraznar
+  Github: https://github.com/ReNDeZOwnler
+  Twitter: @RenAitor
+  Site: http://www.aitoraznar.com
+
+/* SITE */
+  Name: Radiadores Aznar
+  Last update: 15/10/2014
+  Doctype: HTML5
+  Libraries: JQuery, HTML5 Boilerplate

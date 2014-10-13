@@ -1,0 +1,4 @@
+# Allow crawling of all content
+User-agent: *
+Sitemap: http://www.radiadoresaznar.es/sitemap.xml
+Disallow:

@@ -107,6 +107,10 @@
 		width: 100%;
 		float: none;
 	}
+	.item span img {
+		width: 100%;
+		left: 0;
+	}
 #menuContactInfo {
 	float:left;
 	margin-top: 0.5em;

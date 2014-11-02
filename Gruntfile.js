@@ -36,13 +36,13 @@ module.exports = function (grunt) {
 
         clean: {
             // List of files that will be removed before the
-            // build process is started
+            // deploy process is started
             all: [
                 '.tmp', // used by the `usemin` task
                 '<%= settings.dir.dist %>'
             ],
 
-            // List of files no longer required after the build
+            // List of files no longer required after the deploy
             // process is completed
             tmp: [
                 '.tmp'  // used by the `usemin` task
@@ -253,7 +253,7 @@ module.exports = function (grunt) {
     // | Main Tasks                                                            |
     // -------------------------------------------------------------------------
 
-    grunt.registerTask('build', [
+    grunt.registerTask('deploy', [
         'clean:all',
         'copy',
         'useminPrepare',
@@ -267,9 +267,9 @@ module.exports = function (grunt) {
     ]);
 
     // default task
-    // (same as `build`, as `build` will be used more often)
+    // (same as `deploy`, as `deploy` will be used more often)
     grunt.registerTask('default', [
-        'build'
+        'deploy'
     ]);
 
     grunt.registerTask('dev', [
@@ -279,7 +279,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'jshint',
-        'build'
+        'deploy'
     ]);
 
 };

@@ -111,7 +111,7 @@
 							</header>
 							
 							<footer>
-								<a href="#location" class="button scrolly">Dónde estamos</a>
+								<a href="#location" class="button scrolly icon fa-map-marker"> Dónde estamos</a>
 							</footer>
 
 						</div>
@@ -226,21 +226,37 @@
 
 							<h3>¿Tienes dudas sobre nuestros servicios? Llámanos o escríbenos y te daremos respuesta.</h3>
 
-							<p>Pídenos un presupuesto sin compromiso o consulta la disponibilidad de recogida y entrega. Deja tu teléfono y te llamaremos.</p>
+							<p>
+								Pídenos un presupuesto sin compromiso o consulta la disponibilidad de recogida y entrega.
+								<br/>
+								Deja tu teléfono o tu dirección de email y contactaremos contigo.
+							</p>
 							
-							<form method="post" action="#">
+							<form id="feedbackForm" method="post" action="#">
 								<div class="row half">
-									<div class="6u"><input type="text" name="name" placeholder="Nombre" /></div>
-									<div class="6u"><input type="text" name="email" placeholder="Dirección de email" /></div>
+									<div class="12u"><input type="text" id="name" name="name" placeholder="Nombre" /></div>
+								</div>
+								<div class="row half">
+									<div class="6u"><input type="text" id="phone" name="phone" placeholder="Número de teléfono" /></div>
+									<div class="6u"><input type="text" id="email" name="email" placeholder="Dirección de email" /></div>
 								</div>
 								<div class="row half">
 									<div class="12u">
-										<textarea name="message" placeholder="Mensaje"></textarea>
+										<textarea name="message" placeholder="Tu consulta o solicitud de presupuesto"></textarea>
+									</div>
+								</div>
+								<div class="row half">
+									<div class="6u">
+										<input type="text" name="captcha_code" id="captcha_code" placeholder="Introduce los caracteres de la imagen." />
+									</div>
+									<div class="6u">
+										<img id="captcha" src="library/vender/securimage/securimage_show.php" alt="CAPTCHA Image" />
+										<a href="#" onclick="document.getElementById('captcha').src = 'library/vender/securimage/securimage_show.php?' + Math.random(); return false" class="button icon fa fa-refresh" title="Pulsa para recargar el captcha"> Recargar</a>
 									</div>
 								</div>
 								<div class="row">
 									<div class="12u">
-										<input type="submit" value="Enviar" />
+										<button type="submit" class="button icon fa fa-send" id="feedbackSubmit"> Enviar</button>
 									</div>
 								</div>
 							</form>
@@ -265,7 +281,7 @@
 
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-44570722-2']);
+		  //_gaq.push(['_setAccount', 'UA-44570722-2']);
 		  _gaq.push(['_trackPageview']);
 		  _gaq.push(['_setAllowAnchor', true]);
 		  _gaq.push(['_trackPageview', location.pathname + location.search + location.hash]);

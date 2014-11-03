@@ -199,7 +199,7 @@
 		
 			.image img
 			{
-				
+				width: 100%;
 			}
 			
 			.image.avatar48
@@ -486,7 +486,7 @@
 			.item header, .item section
 			{
 				margin: 0;
-				padding: 1em 0 1em 0;
+				padding: 1em;
 				font-size: 1em;
 			}
 

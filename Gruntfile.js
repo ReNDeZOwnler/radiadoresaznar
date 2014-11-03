@@ -96,7 +96,7 @@ module.exports = function (grunt) {
                     // except: files from the `css/` and `js/` directory
                     // (other tasks will handle the copying of these files)
                     '!css/*',
-                    '!img/old/*'
+                    '!js/*',
                 ]
             }
         },
@@ -104,10 +104,11 @@ module.exports = function (grunt) {
         filerev: {
             files: {
                 src: [
-                    '<%= settings.dir.dist %>/css/*.css',
-                    '<%= settings.dir.dist %>/img/*.png',
                     '<%= settings.dir.dist %>/js/*.js',
-                    '!<%= settings.dir.dist %>/js/jquery*.min.js'
+                    '<%= settings.dir.dist %>/css/*.css',
+                    '<%= settings.dir.dist %>/images/*.png',
+                    '<%= settings.dir.dist %>/images/*.jpg',
+                    '!<%= settings.dir.dist %>/js/*.min.js'
                 ]
             },
             options: {
@@ -162,7 +163,7 @@ module.exports = function (grunt) {
 
         usemin: {
             // List of files for which to update asset references
-            css: '<%= settings.dir.dist %>/css/*.css',
+            css: '<%= settings.dir.dist %>/css/**/*.css',
             html: '<%= settings.dir.dist %>/index.html'
         },
 
@@ -224,7 +225,9 @@ module.exports = function (grunt) {
 
                                 'cssmin'
 
-                            ]
+                            ],
+
+                            js: ['concat', 'uglifyjs']
 
                         },
                         post: {}
@@ -257,6 +260,8 @@ module.exports = function (grunt) {
         'clean:all',
         'copy',
         'useminPrepare',
+        'concat',
+        'uglify',
         'uncss',
         'autoprefixer',
         'cssmin',

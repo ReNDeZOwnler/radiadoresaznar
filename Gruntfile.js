@@ -58,10 +58,12 @@ module.exports = function (grunt) {
                     keepSpecialComments: '*'
                 },
                 files: [ 
+                    { src: [ 'src/css/style.css' ], dest: 'dist/css/style.css' },
                     { src: [ 'src/css/style-mobile.css' ], dest: 'dist/css/style-mobile.css' },
                     { src: [ 'src/css/style-narrow.css' ], dest: 'dist/css/style-narrow.css' },
                     { src: [ 'src/css/style-narrower.css' ], dest: 'dist/css/style-narrower.css' },
                     { src: [ 'src/css/style-normal.css' ], dest: 'dist/css/style-normal.css' },
+                    { src: [ 'src/css/style-wide.css' ], dest: 'dist/css/style-wide.css' },
                     { src: [ 'src/css/font-awesome.min.css' ], dest: 'dist/css/font-awesome.min.css' }
                 ]
             }
@@ -116,10 +118,12 @@ module.exports = function (grunt) {
                     '<%= settings.dir.dist %>/images/*.png',
                     '<%= settings.dir.dist %>/images/*.jpg',
                     '!<%= settings.dir.dist %>/js/*.min.js',
+                    '!<%= settings.dir.dist %>/css/style.css',
                     '!<%= settings.dir.dist %>/css/style-mobile.css',
                     '!<%= settings.dir.dist %>/css/style-narrow.css',
                     '!<%= settings.dir.dist %>/css/style-narrower.css',
                     '!<%= settings.dir.dist %>/css/style-normal.css',
+                    '!<%= settings.dir.dist %>/css/style-wide.css',
                     '!<%= settings.dir.dist %>/css/font-awesome.min.css'
                 ]
             },
@@ -158,9 +162,9 @@ module.exports = function (grunt) {
                     minifyJS: true,
                     removeAttributeQuotes: true,
                     removeComments: true,
-                    removeEmptyAttributes: true,
-                    removeOptionalTags: true,
-                    removeRedundantAttributes: true
+                    removeEmptyAttributes: false,
+                    removeOptionalTags: false,
+                    removeRedundantAttributes: false
                 }
             }
         },

@@ -151,13 +151,17 @@
 		      data: $("#feedbackForm").serialize(),
 		      success: function(data)
 		      {
-		        contactForm.addAjaxMessage(data.message, false);
+		        contactForm.addAjaxMessage(data.message, 'success');
+
+		        //Reset form fields
+		        $('input', '#feedbackForm').val('');
+		        $('textarea', '#feedbackForm').val('');
 		        //get new Captcha on success
 		        $('#captcha').attr('src', 'library/vender/securimage/securimage_show.php?' + Math.random());
 		      },
 		      error: function(response)
 		      {
-		        contactForm.addAjaxMessage(response.responseJSON.message, true);
+		        contactForm.addAjaxMessage(response.responseJSON.message, 'error');
 		      }
 		   });
 		    return false;
@@ -180,8 +184,18 @@ var contactForm = {
     $input.siblings('.help-block').show();
     $input.parent('.form-group').addClass('has-error');
   },
-  addAjaxMessage: function(msg, isError) {
-    $("#feedbackSubmit").after('<div id="emailAlert" class="alert alert-' + (isError ? 'danger' : 'success') + '" style="margin-top: 5px;">' + $('<div/>').text(msg).html() + '</div>');
+  addAjaxMessage: function(msg, type) {
+  	type = (typeof(type) === void 0) ? 'info' : type;
+  	var infoDiv = $('#infoDiv');
+  	infoDiv.removeAttr('class').addClass('isa_' + type);
+  	if(msg !== '') {
+  		infoDiv.text(msg);
+  		infoDiv.fadeIn();
+  		setTimeout(function() {
+  			infoDiv.fadeOut();
+  		}, 1500);	
+  	}
+  	
   }
 };
 

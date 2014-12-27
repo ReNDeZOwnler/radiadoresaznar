@@ -836,6 +836,7 @@
 	line-height: 2.25em;
 	border-radius: 0.35em;
 	text-align: center;
+	z-index: 10;
 }
 
 .isa_info, .isa_success, .isa_warning, .isa_error {

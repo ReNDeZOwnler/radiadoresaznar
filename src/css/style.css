@@ -826,6 +826,18 @@
 	min-height: 3em;
 }
 
+#callNowButton {
+	position: fixed;
+	top: 0.5em;
+	right: 0.5em;
+	color: #fff;
+	background: rgba(128,136,144,0.5);
+	padding: 0 0.5em;
+	line-height: 2.25em;
+	border-radius: 0.35em;
+	text-align: center;
+}
+
 .isa_info, .isa_success, .isa_warning, .isa_error {
 	margin: 10px 0px;
 	padding:12px;

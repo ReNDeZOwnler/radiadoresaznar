@@ -42,10 +42,12 @@
 		}
 	});
 
+	var	$window, $body, infoDiv;
+	
 	$(function() {
-
-		var	$window = $(window),
-			$body = $('body');
+		$window = $(window);
+		$body = $('body');
+		infoDiv = $('#infoDiv');
 			
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -122,13 +124,14 @@
 
 		// Contact form
 		$("#feedbackSubmit").click(function() {
+			console.log('------ 0');
 		    //clear any errors
 		    contactForm.clearErrors();
 
 		    //do a little client-side validation -- check that each field has a value and e-mail field is in proper format
 		    var hasErrors = false;
-		    $('#feedbackForm input,textarea').each(function() {
-		      if (!$(this).val() && $(this).attr('id') != "phone" && $(this).attr('id') != "email" ) {
+		    $('input,textarea', '#feedbackForm').each(function() {
+		      if(!$(this).val() && $(this).attr('id') !== "phone" && $(this).attr('id') !== "email" ) {
 		        hasErrors = true;
 		        contactForm.addError($(this));
 		      }
@@ -140,7 +143,8 @@
 		    }
 
 		    //if there are any errors return without sending e-mail
-		    if (hasErrors) {
+		    if(hasErrors) {
+		      contactForm.addAjaxMessage('El fomulario contiene campos sin completar, revise los campos resaltados.', 'error');
 		      return false;
 		    }
 
@@ -154,8 +158,7 @@
 		        contactForm.addAjaxMessage(data.message, 'success');
 
 		        //Reset form fields
-		        $('input', '#feedbackForm').val('');
-		        $('textarea', '#feedbackForm').val('');
+		        $('input,textarea', '#feedbackForm').val('');
 		        //get new Captcha on success
 		        $('#captcha').attr('src', 'library/vender/securimage/securimage_show.php?' + Math.random());
 		      },
@@ -163,7 +166,7 @@
 		      {
 		        contactForm.addAjaxMessage(response.responseJSON.message, 'error');
 		      }
-		   });
+		   	});
 		    return false;
 		  }); 	
 
@@ -175,25 +178,22 @@ var contactForm = {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
   },
-  clearErrors: function () {
-    $('#emailAlert').remove();
-    $('#feedbackForm .help-block').hide();
-    $('#feedbackForm .form-group').removeClass('has-error');
+  clearErrors: function() {
+  	infoDiv.fadeOut();
+    $('input,textarea', '#feedbackForm').removeClass('has-error');
   },
   addError: function ($input) {
-    $input.siblings('.help-block').show();
-    $input.parent('.form-group').addClass('has-error');
+    $input.addClass('has-error');
   },
   addAjaxMessage: function(msg, type) {
   	type = (typeof(type) === void 0) ? 'info' : type;
-  	var infoDiv = $('#infoDiv');
   	infoDiv.removeAttr('class').addClass('isa_' + type);
   	if(msg !== '') {
   		infoDiv.text(msg);
   		infoDiv.fadeIn();
   		setTimeout(function() {
   			infoDiv.fadeOut();
-  		}, 1500);	
+  		}, 2000);
   	}
   	
   }

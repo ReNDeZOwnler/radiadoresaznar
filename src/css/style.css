@@ -364,6 +364,12 @@
 					color: #555 !important;
 				}
 
+				form .has-error 
+				{
+					color: #D8000C;
+					border-color: #D8000C;
+				}
+
 				form ::-webkit-input-placeholder
 				{
 					color: #555 !important;
@@ -812,13 +818,12 @@
 	margin: auto;
 	left: 0;
 	right: 0;
-	top: 0;
 	bottom: 0;
-	width: 90%;
-	height: 3em;
+	width: 100%;
 	position: fixed;
 	display: none;
 	z-index: 15;
+	min-height: 3em;
 }
 
 .isa_info, .isa_success, .isa_warning, .isa_error {

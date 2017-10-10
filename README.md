@@ -22,3 +22,7 @@ Se requería de una página web sencilla pero que contuviese toda la informació
 
 ##Problemas detectados:
 - El SEO en una página web de un solo archivo html, Google no lo pone fácil para detectar las diferentes secciones dentro de la página.
+
+## Despliegue
+- `grunt deploy`
+- `cp -pr dist/* /var/www/radiadoresaznar/`

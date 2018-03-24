@@ -1,9 +1,9 @@
-#Radiadores Aznar
+# Radiadores Aznar
 ======================
 
 Se requería de una página web sencilla pero que contuviese toda la información que un negocio de ámbito local pudiera necesitar. Está realizada como una web de una sola página con varios enlaces interno para navegar entre las diferentes secciones. La dirección de la web es http://www.radiadoresaznar.es y es un negocio local de reparación, limpieza y venta de radiadores de automoción.
 
-##Tareas realizadas:
+## Tareas realizadas:
 
 - Alta del dominio www.radiadoresaznar.es y elección de hosting adecuado a los requisitos. 
 
@@ -20,7 +20,7 @@ Se requería de una página web sencilla pero que contuviese toda la informació
 - Pruebas de rendimiento con woorank y Google page insights.
 
 
-##Problemas detectados:
+## Problemas detectados:
 - El SEO en una página web de un solo archivo html, Google no lo pone fácil para detectar las diferentes secciones dentro de la página.
 
 ## Despliegue
